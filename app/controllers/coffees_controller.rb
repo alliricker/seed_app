@@ -4,15 +4,21 @@ class CoffeesController < ApplicationController
     end
 
     def create
-        @coffee = Coffee.create(coffee_params)
-        redirect_to coffee_path(@coffee)
+        @coffee = Coffee.new(coffee_params)
+        if @coffee.save 
+            redirect_to coffee_path(@coffee)
+        else
+            render :new 
+        end
     end
 
     def index
+        @coffees = Coffee.all   
     end
 
     def show
-        @coffee = Coffee.find_by(id: params[:id])
+        @coffee = Coffee.find_by_id(params[:id])
+    
     end
     
 

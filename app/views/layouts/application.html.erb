@@ -1,9 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <img src="https://hosting.photobucket.com/images/pp94/alliricker/SEED_TO_CUP_(2).png?width=960&height=720&fit=bounds" border="0" alt="SEED_TO_CUP_(2)"/>
-</head>
-<body>
-    <%= yield %>
-</body>
+  <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sanchez&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body{
+        padding-top: 60px;
+        padding-bottom: 40px;
+        font-family: 'Sanchez', serif;
+      }
+
+      h1 {
+        text-align: left;
+        font-family: 'Sanchez', serif;
+        color: rgb(60,94,37);
+        
+      }
+
+      .h2 {
+        text-align: left;
+        font-family: 'Sanchez', serif;
+        color: rgb(60,94,37);
+      }
+
+      .p{
+        text-align: right;
+        font-family: 'Sanchez', serif;
+        color: rgb(60,94,37);
+      }
+
+       .header {
+         width: 100%;
+         padding: 6px;
+         position: fixed;
+         margin-top: 0px;
+
+       }
+
+
+       @-webkit-keyframes swinging{
+          0%{-webkit-transform: rotate(10deg);}
+          50%{-webkit-transform: rotate(-5deg)}
+          100%{-webkit-transform: rotate(10deg);}
+        }
+
+        @keyframes swinging{
+          0%{transform: rotate(10deg);}
+          50%{transform: rotate(-5deg)}
+          100%{transform: rotate(10deg);}
+        }
+
+       .swingimage{
+          -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+          -webkit-animation: swinging 4s ease-in-out forwards infinite;
+          animation: swinging 4s ease-in-out forwards infinite;
+          float: right;
+          padding: 10px;
+          margin: 10px;
+        }
+
+        .logo {
+          float: left;
+          margin: 10px;
+          padding: 5px;
+          position: fixed;
+        }
+
+        .topnav {
+          background-color: white;
+          overflow: hidden;
+        }
+        .topnav a {
+          float: left;
+          text-align: center;
+          padding: 14px;
+          text-decoration: none;
+          font-size: 14px;
+          font-family: 'Sanchez', serif;
+          color: rgb(186,69,17);
+        }
+        .topnav a.active{
+          color: rgb(60,94,37);
+          font-family: 'Sanchez', serif;
+        }
+    </style>
+  </head>
+  <body>
+    <title>seed to cup</title>
+    <div class="topnav">
+      <a class="active" href="/home">Home</a>
+      <a href="/users/new">Create Account</a>
+      <a href="/coffees/new">Add a New Coffee</a>
+      <a href="/coffees/index">All Coffees</a>
+    </div>
+  </body>
+  <%= yield %>
 </html>
