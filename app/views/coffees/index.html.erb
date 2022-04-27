@@ -1,0 +1,3 @@
+<% @coffees.each do |coffee| %>
+    <div><%= link_to coffee.name, coffee_path(coffee) %></div>
+<% end %>

@@ -11,34 +11,7 @@
         padding-bottom: 40px;
         font-family: 'Sanchez', serif;
       }
-
-      h1 {
-        text-align: left;
-        font-family: 'Sanchez', serif;
-        color: rgb(60,94,37);
-        
-      }
-
-      .h2 {
-        text-align: left;
-        font-family: 'Sanchez', serif;
-        color: rgb(60,94,37);
-      }
-
-      .p{
-        text-align: right;
-        font-family: 'Sanchez', serif;
-        color: rgb(60,94,37);
-      }
-
-       .header {
-         width: 100%;
-         padding: 10px;
-         position: fixed;
-         margin-top: 0px;
-       }
-
-       .welcome-header {
+      .welcome-header {
          width: 100%;
          padding: 10px;
          position: fixed;
@@ -95,13 +68,9 @@
   </head>
   <body>
     <title>seed to cup</title>
-
-    <header>
-    <img class= "swingimage" src= "https://hosting.photobucket.com/images/pp94/alliricker/coffee_plant.png?width=590&height=370&fit=bounds" border="0" alt="coffee_plant"/>
-    </header>
-
+    
     <div class="topnav">
-      <a href="/home">Home</a>
+      <a class="active" href="/home">Home</a>
       <a href="/users/new">Create Account</a>
       <a href="/coffees/new">Add a New Coffee</a>
       <a href="/coffees">All Coffees</a>
@@ -111,5 +80,3 @@
 
   <%= yield %>
 </html>
-
-
