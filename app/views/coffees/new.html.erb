@@ -8,6 +8,6 @@
  <%= f.collection_select :roast, Coffee::ROASTS, :to_s, :to_s, 
        :include_blank => true %> <br><br>
 <%= f.label :year, "Crop Year:" %> <br>
-<%= f.number_field :year %> <br><br>
+<%= f.text_field :year %> <br><br>
 <%= f.submit %>
 <% end %>
