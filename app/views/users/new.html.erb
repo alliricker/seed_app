@@ -1,15 +1,15 @@
 
 <h1> New User </h1>
 <%= form_for @user do |f| %>
-<p><%= f.label :name, "Name:" %> </p>
-<p><%= f.text_field :name %> </p>
-<p><%= f.label :email, "Email:" %> </p>
-<p><%= f.text_field :email %> </p>
-<p><%= f.label :password, "Password:" %> </p>
-<p><%= f.password_field :password %> </p>
-<p><%= f.label :company, "Company:" %> </p>
-<p><%= f.text_field :company %> </p>
-<p><%= f.label :title, "Job Title:" %> </p>
-<p><%= f.text_field :title %> </p>
-<p><%= f.submit %></p>
+<p><%= f.label :name, "Name:" %> 
+<%= f.text_field :name %> <br><br>
+<%= f.label :email, "Email:" %> 
+<%= f.text_field :email %> <br><br>
+<%= f.label :password, "Password:" %> 
+<%= f.password_field :password %> <br><br>
+<%= f.label :company, "Company:" %> 
+<%= f.text_field :company %> <br><br>
+<%= f.label :title, "Job Title:" %> 
+<%= f.text_field :title %> <br><br>
+<%= f.submit %></p>
 <% end %>
