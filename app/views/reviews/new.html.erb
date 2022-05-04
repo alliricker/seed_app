@@ -1,0 +1,7 @@
+<%= form_for @review do |f| %>
+<%= f.label :rating, "Rating:" %>
+<%= f.number_field :rating, min:0, max:5 %> <br><br>
+<%= f.label :notes, "Notes:" %>
+<%= f.text_area :notes %><br><br>
+<%= f.submit %>
+<% end %>
