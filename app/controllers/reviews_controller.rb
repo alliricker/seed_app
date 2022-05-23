@@ -7,9 +7,9 @@ class ReviewsController < ApplicationController
     def create 
         @review = current_user.reviews.build(review_params)
         if @review.save 
-            redirect_to review_path(@review)
+            redirect_to review_path(@review.coffee_id)
         else
-            render :show
+            render :new
         end
     end
 
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     end
 
     def show 
-        @coffee = Coffee.find(params[:id])
+        @coffee = Coffee.find_by_id(params[:id])
         @review = Review.find(params[:id])
         
     end
@@ -33,5 +33,5 @@ class ReviewsController < ApplicationController
             :comment,
         )
     end
- 
 end
+ 
