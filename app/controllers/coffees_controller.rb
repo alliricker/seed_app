@@ -18,7 +18,6 @@ class CoffeesController < ApplicationController
 
     def show
         @coffee = Coffee.find_by_id(params[:id])
-    
     end
     
 

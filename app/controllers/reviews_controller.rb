@@ -1,11 +1,7 @@
 class ReviewsController < ApplicationController
 
     def new 
-        if @coffee = Coffee.find_by_id(params[:coffee_id])
-            @review = @coffee.reviews.build 
-        else
             @review = Review.new 
-        end
     end
 
     def create 
@@ -13,22 +9,28 @@ class ReviewsController < ApplicationController
         if @review.save 
             redirect_to review_path(@review)
         else
-            render :new
+            render :show
         end
     end
 
+    def index 
+        @reviews = @user.reviews.all 
+    end
+
     def show 
-        @coffee = @review.coffee
+        @coffee = Coffee.find(params[:id])
+        @review = Review.find(params[:id])
+        
     end
 
     private
 
     def review_params
         params.require(:review).permit(
-            :rating,
-            :notes,
             :user_id,
-            :coffee_id
+            :coffee_id,
+            :rating,
+            :comment,
         )
     end
  
