@@ -18,9 +18,7 @@ class ReviewsController < ApplicationController
     end
 
     def show 
-        @coffee = Coffee.find_by_id(params[:id])
         @review = Review.find(params[:id])
-        
     end
 
     private

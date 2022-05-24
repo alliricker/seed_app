@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_160753) do
+ActiveRecord::Schema.define(version: 2022_05_23_232038) do
 
   create_table "coffees", force: :cascade do |t|
     t.string "name"
@@ -39,4 +39,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_160753) do
     t.string "title"
   end
 
+  add_foreign_key "reviews", "coffees"
+  add_foreign_key "reviews", "users"
 end

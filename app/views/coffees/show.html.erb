@@ -1,4 +1,9 @@
 <h2> <%= @coffee.name %> </h2>
 <p>Origin: <%= @coffee.origin %> </p>
 <p>Roast Level: <%= @coffee.roast %> </p>
-<p>Crop Year: <%= @coffee.year %> </p>
+<p>Crop Year: <%= @coffee.year %> </p><br>
+<p>Average Rating: <%= @coffee.avg_rating %> <br>
+<% @coffee.reviews.each do |review| %>
+<p>Rating: <%= review.rating %><p>
+<p>Comment: <%= review.comment %><p>
+<% end %>
