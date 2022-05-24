@@ -9,7 +9,7 @@ class Coffee < ApplicationRecord
         if self.reviews.count == 0 
             "There are no reviews for this coffee yet!"
         else
-            self.reviews.average(:rating).floor
+            self.reviews.average(:rating)
         end
     end
 end 

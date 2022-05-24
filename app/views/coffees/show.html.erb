@@ -1,9 +1,12 @@
 <h2> <%= @coffee.name %> </h2>
-<p>Origin: <%= @coffee.origin %> </p>
-<p>Roast Level: <%= @coffee.roast %> </p>
+<p>Origin: <%= @coffee.origin.capitalize %> </p>
+<p>Roast Level: <%= @coffee.roast.capitalize %> </p>
 <p>Crop Year: <%= @coffee.year %> </p><br>
-<p>Average Rating: <%= @coffee.avg_rating %> <br>
+<h2>Average Rating: <%= @coffee.avg_rating %> </h2><br>
 <% @coffee.reviews.each do |review| %>
+<p>User: <%= link_to review.user.name, user_path(review.user.id) %></p>
 <p>Rating: <%= review.rating %><p>
 <p>Comment: <%= review.comment %><p>
+
 <% end %>
+<%= link_to "Review Coffees", new_review_path(@review) %>
