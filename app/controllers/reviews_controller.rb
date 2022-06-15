@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     def create 
         @review = current_user.reviews.build(review_params)
         if @review.save 
-            redirect_to review_path(@review.coffee_id)
+            redirect_to review_path(@review)
         else
             render :new
         end
