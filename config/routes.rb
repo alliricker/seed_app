@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#signout'
   post '/signout', to: 'sessions#destroy'
   get 'home', to: 'welcome#home'
-  get '/auth/google_oauth2' => 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#google'
+  
 
 end
