@@ -4,10 +4,10 @@
 <p>Crop Year: <%= @coffee.year %> </p><br>
 <p>Roaster:</p>
 <% @coffee.roasters.each do |roaster| %>
-<p> Company: <%= roaster.name %> </p>
+<p> Company: <%= link_to roaster.name, url_for(roaster) %> </p>
 <p> State: <%= roaster.state %> </p>
-<% end %>
-<h2>Average Rating: <%= @coffee.avg_rating %> </h2><br>
+<% end %> <br>
+<h4>Average Rating: <%= @coffee.avg_rating %> </h4><br>
 <% @coffee.reviews.each do |review| %>
 <p>User: <%= link_to review.user.name, user_path(review.user.id) %></p>
 <p>Rating: <%= review.rating %><p>
@@ -15,4 +15,4 @@
 
 <% end %>
 
-<%= link_to "Review Coffees", new_review_path(@review) %>
+<%= link_to "Review Coffees", new_review_path(@review)%>

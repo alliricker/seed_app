@@ -1,4 +1,11 @@
-<h2> <%= @user.name %> </h2>
-<p> <%= @user.company %> <p>
-<p> <%= @user.title %> <p>
+<h2> <%= @user.name.capitalize %>'s Profile</h2>
+<h3> Company: <%= @user.company.capitalize %> </h3>
+<h3> Job Title: <%= @user.title.capitalize %> </h3><br><br> 
+
+<h2> <%= @user.name.capitalize %>'s Reviews </h2>
+<% @user.reviews.each do |review| %>
+<h3> Coffee: <%= link_to review.coffee.name, coffee_path(review.coffee) %> </h3>
+<p>Rating: <%= review.rating %> </p>
+<p>Comments: <%= review.comment %> </p> <br>
+<% end %>
 

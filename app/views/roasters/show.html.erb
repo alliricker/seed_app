@@ -1,0 +1,9 @@
+<p> <%= @roaster.name %> is based in <%= @roaster.state %> </p>
+<p> Their average coffee rating is <%= @roaster.coffee.avg_rating %> </p>
+<% @roaster.coffee.reviews.each do |review| %>
+<p>Coffee: <%=  link_to review.coffee.name, coffee_path(review.coffee) %><br>
+Rating: <%= review.rating %><br>
+"<%= review.comment %>" 
+- <%= review.user.name.capitalize %><br>
+
+<% end %>

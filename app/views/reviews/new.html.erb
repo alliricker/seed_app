@@ -1,6 +1,4 @@
 <%= form_for @review do |f| %>
-<%= f.label :coffee, "Choose a Coffee:" %>
-<%= f.collection_select :coffee_id, Coffee.all, :id, :name %><br><br>
 <%= f.label :rating, "Rating:" %>
 <%= f.number_field :rating, min:0, max:5 %> <br><br>
 <%= f.label :comment, "Comments:" %>
