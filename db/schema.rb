@@ -10,25 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_22_005020) do
+ActiveRecord::Schema.define(version: 2022_06_22_171538) do
 
   create_table "coffees", force: :cascade do |t|
     t.string "name"
     t.string "origin"
     t.string "roast"
     t.integer "year"
-    t.integer "farm_id"
-  end
-
-  create_table "farms", force: :cascade do |t|
-    t.string "name"
-    t.string "producer"
-    t.string "region"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.float "rating", null: false
-    t.string "notes"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -36,6 +24,12 @@ ActiveRecord::Schema.define(version: 2022_06_22_005020) do
     t.integer "coffee_id"
     t.integer "rating"
     t.text "comment"
+  end
+
+  create_table "roasters", force: :cascade do |t|
+    t.string "name"
+    t.string "state"
+    t.integer "coffee_id"
   end
 
   create_table "users", force: :cascade do |t|

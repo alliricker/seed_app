@@ -9,5 +9,12 @@
        :include_blank => true %> <br><br>
 <%= f.label :year, "Crop Year:" %> <br>
 <%= f.text_field :year %> <br><br>
+<h3> Roaster: </h3>
+<%= f.fields_for :roasters do |roaster| %>
+   <%= roaster.label :name %>
+   <%= roaster.text_field :name %> <br>
+   <%= roaster.label :state %>
+   <%= roaster.text_field :state%> <br>
+   <% end %>
 <%= f.submit %>
 <% end %>

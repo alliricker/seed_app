@@ -1,7 +1,9 @@
 class Coffee < ApplicationRecord
     has_many :reviews 
     has_many :users, through: :reviews
-    belongs_to :farm
+    has_many :roasters 
+    accepts_nested_attributes_for :roasters
+
     validates :name, presence: true, uniqueness: true 
 
     ROASTS = ['light', 'medium', 'dark']

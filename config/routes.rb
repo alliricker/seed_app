@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :users
   resources :coffees
   resources :reviews
-  resources :farms
   root :to => "welcome#home"
 
   get '/signin', to: 'sessions#new'

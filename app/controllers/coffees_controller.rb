@@ -1,6 +1,7 @@
 class CoffeesController < ApplicationController
     def new
         @coffee = Coffee.new
+        @coffee.roasters.build
     end
 
     def create
@@ -20,8 +21,6 @@ class CoffeesController < ApplicationController
         @coffee = Coffee.find_by_id(params[:id])
     end
     
-
-
 private
 
     def coffee_params
@@ -29,7 +28,12 @@ private
           :name,
           :origin,
           :roast,
-          :year)
+          :year,
+          roasters_attributes: [
+              :name,
+              :state
+          ]
+      )
     end
 
 end
