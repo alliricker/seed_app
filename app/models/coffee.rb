@@ -1,6 +1,7 @@
 class Coffee < ApplicationRecord
     has_many :reviews 
     has_many :users, through: :reviews
+    belongs_to :farm
     validates :name, presence: true, uniqueness: true 
 
     ROASTS = ['light', 'medium', 'dark']

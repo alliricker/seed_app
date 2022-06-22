@@ -1,0 +1,15 @@
+<%= form_for @farm do |f| %>
+  <%= f.label "Farm Name:" %>
+  <%= f.text_field :name %><br>
+    <%= f.label "Producer Name:" %>
+  <%= f.text_field :producer %><br>
+    <%= f.label "Region:" %>
+  <%= f.text_field :region %><br>
+
+  <%= f.fields_for :coffees do |coffee| %>
+  <%= coffee.label "Coffee:" %>
+  <%= coffee.collection_select(:id, Coffee.all, :id, :name) %>
+
+  <% end %>
+  <%= f.submit %>
+<% end %>
