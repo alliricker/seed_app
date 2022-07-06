@@ -3,7 +3,6 @@ class CreateCoffees < ActiveRecord::Migration[6.0]
     create_table :coffees do |t|
       t.string :name 
       t.string :origin 
-      t.string :roast 
       t.integer :year 
     end
   end

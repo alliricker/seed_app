@@ -1,7 +1,7 @@
 class CoffeesController < ApplicationController
     def new
         @coffee = Coffee.new
-        @coffee.roasters.build
+        @coffee.categories.build
     end
 
     def create
@@ -29,9 +29,8 @@ private
           :origin,
           :roast,
           :year,
-          roasters_attributes: [
+          categories_attributes: [
               :name,
-              :state
           ]
       )
     end

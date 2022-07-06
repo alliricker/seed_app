@@ -1,12 +1,10 @@
 class Coffee < ApplicationRecord
     has_many :reviews 
     has_many :users, through: :reviews
-    has_many :roasters 
-    accepts_nested_attributes_for :roasters
+    has_many :categories
+    accepts_nested_attributes_for :categories
 
     validates :name, presence: true, uniqueness: true 
-
-    ROASTS = ['light', 'medium', 'dark']
     
     def avg_rating
         if self.reviews.count == 0 

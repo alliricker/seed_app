@@ -12,10 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2022_06_22_171538) do
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "coffee_id"
+  end
+
   create_table "coffees", force: :cascade do |t|
     t.string "name"
     t.string "origin"
-    t.string "roast"
     t.integer "year"
   end
 
@@ -24,12 +28,6 @@ ActiveRecord::Schema.define(version: 2022_06_22_171538) do
     t.integer "coffee_id"
     t.integer "rating"
     t.text "comment"
-  end
-
-  create_table "roasters", force: :cascade do |t|
-    t.string "name"
-    t.string "state"
-    t.integer "coffee_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -4,17 +4,11 @@
 <%= f.text_field :name %> <br><br>
 <%= f.label :origin, "Origin:" %> <br>
 <%= f.text_field :origin %> <br><br>
-<%= f.label :roast, "Roast:" %> <br>
- <%= f.collection_select :roast, Coffee::ROASTS, :to_s, :to_s, 
-       :include_blank => true %> <br><br>
 <%= f.label :year, "Crop Year:" %> <br>
 <%= f.text_field :year %> <br><br>
-<h3> Roaster: </h3>
-<%= f.fields_for :roasters do |roaster| %>
-   <%= roaster.label :name, "Name:"%>
-   <%= roaster.text_field :name %> <br><br>
-   <%= roaster.label :state, "State:" %>
-   <%= roaster.select(:state, options_for_select(us_states, "CA")) %> <br>
+<%= f.fields_for :categories do |category| %>
+   <%= category.label :name, "Roast Level:"%>
+   <%= category.select :name, [ 'Light', 'Medium', 'Dark' ], :prompt => 'Select One' %>
    <% end %><br><br>
 <%= f.submit %>
 <% end %>

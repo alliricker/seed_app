@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
   resources :coffees
-  resources :roasters
+  resources :categories
   root :to => "welcome#home"
 
   get '/signin', to: 'sessions#new'
@@ -13,16 +13,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#google'
 
   resources :coffees do 
-    resources :roasters
+    resources :categories
   end
-
-  resources :users do 
-    resources :coffees
-  end
-
-  resources :coffees do 
-    resources :reviews
-  end
-    
 
 end

@@ -1,11 +1,8 @@
 <h2> <%= @coffee.name %> </h2>
 <p>Origin: <%= @coffee.origin.capitalize %> </p>
-<p>Roast Level: <%= @coffee.roast.capitalize %> </p>
 <p>Crop Year: <%= @coffee.year %> </p><br>
-<p>Roaster:</p>
-<% @coffee.roasters.each do |roaster| %>
-<p> Company: <%= link_to roaster.name, url_for(roaster) %> </p>
-<p> State: <%= roaster.state %> </p>
+<% @coffee.categories.each do |category| %>
+<p> Roast Level: <%= category.name%> </p>
 <% end %> <br>
 <h4>Average Rating: <%= @coffee.avg_rating %> </h4><br>
 <% @coffee.reviews.each do |review| %>
