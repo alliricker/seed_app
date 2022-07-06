@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :require_login
 
     def new 
             @review = Review.new 
@@ -34,6 +35,10 @@ class ReviewsController < ApplicationController
 
 
     private
+
+    def require_login
+      return head(:forbidden) unless session.include? :user_id
+    end
 
     def review_params
         params.require(:review).permit(

@@ -1,12 +1,10 @@
 class CoffeesController < ApplicationController
+    before_action :require_login
+    skip_before_action :require_login, only: [:index, :show]
+
     def new
-        if logged_in?
         @coffee = Coffee.new
         @coffee.categories.build
-        else 
-            flash[:error] = "Please Log In to Create a New Coffee"
-            redirect_to 'home'
-        end
     end
 
     def create
@@ -39,6 +37,10 @@ class CoffeesController < ApplicationController
 
     
 private
+
+    def require_login
+      return head(:forbidden) unless session.include? :user_id
+    end
 
     def coffee_params
       params.require(:coffee).permit(
