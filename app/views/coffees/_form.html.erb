@@ -1,0 +1,14 @@
+
+<%= form_for @coffee do |f| %>
+<%= f.label :name, "Name:" %> <br>
+<%= f.text_field :name %> <br><br>
+<%= f.label :origin, "Origin:" %> <br>
+<%= f.text_field :origin %> <br><br>
+<%= f.label :year, "Crop Year:" %> <br>
+<%= f.text_field :year %> <br><br>
+<%= f.fields_for :categories do |category| %>
+   <%= category.label :name, "Roast Level:"%>
+   <%= category.select :name, [ 'Light', 'Medium', 'Dark' ], :prompt => 'Select One' %>
+   <% end %><br><br>
+<%= f.submit %>
+<% end %>

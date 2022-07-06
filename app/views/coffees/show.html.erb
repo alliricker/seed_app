@@ -1,6 +1,6 @@
 <h2> <%= @coffee.name %> </h2>
 <p>Origin: <%= @coffee.origin.capitalize %> </p>
-<p>Crop Year: <%= @coffee.year %> </p><br>
+<p>Crop Year: <%= @coffee.year %> </p>
 <% @coffee.categories.each do |category| %>
 <p> Roast Level: <%= category.name%> </p>
 <% end %> <br>
