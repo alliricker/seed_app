@@ -2,3 +2,6 @@
 <h2> <%= @review.coffee.name.capitalize  %></h2>
 <p> Rating: <%= @review.rating %> </p>
 <p> Comments: <%= @review.comment.capitalize  %> </p>
+<%= form_tag review_path(@review.id), method: "delete" do %>
+  <%= submit_tag "Delete this Review" %>
+<% end %>

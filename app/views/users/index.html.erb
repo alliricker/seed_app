@@ -1,1 +1,6 @@
 <h1> users index </h1>
+<% @users.each do |user| %>
+<%= user.name %>
+<%= user.company %>
+<%= user.title %>
+<% end %>

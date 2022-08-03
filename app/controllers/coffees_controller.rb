@@ -34,6 +34,15 @@ class CoffeesController < ApplicationController
         redirect_to coffee_path(@coffee)
     end
 
+    def destroy
+        @coffee = Coffee.find(params[:id])
+        @coffee.reviews.clear
+        @coffee.destroy
+        redirect_to '/coffees'
+    end
+
+        
+
 
     
 private

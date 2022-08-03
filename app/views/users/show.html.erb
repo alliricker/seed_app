@@ -3,9 +3,11 @@
 <h3> Job Title: <%= @user.title.capitalize %> </h3><br><br> 
 
 <h2> <%= @user.name.capitalize %>'s Reviews </h2>
+
 <% @user.reviews.each do |review| %>
 <h3> Coffee: <%= link_to review.coffee.name, coffee_path(review.coffee) %> </h3>
 <p>Rating: <%= review.rating %> </p>
-<p>Comments: <%= review.comment %> </p> <br>
-<% end %>
+<p>Comments: <%= review.comment %> </p>
+<p><%= link_to "Edit My Review", edit_review_path(review) %></p> <br>
+ <% end %>
 

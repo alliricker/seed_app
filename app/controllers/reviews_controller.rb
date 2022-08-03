@@ -32,6 +32,11 @@ class ReviewsController < ApplicationController
         redirect_to review_path(@review)
     end
 
+    def destroy
+        Review.find(params[:id]).destroy
+        redirect_to '/reviews/new', notice: "Review Deleted"
+    end
+
 
 
     private

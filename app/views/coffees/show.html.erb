@@ -2,8 +2,12 @@
 <p>Origin: <%= @coffee.origin.capitalize %> </p>
 <p>Crop Year: <%= @coffee.year %> </p>
 <% @coffee.categories.each do |category| %>
-<p> Roast Level: <%= category.name%> </p>
+<p> Roast Level: <%= category.name %> </p>
 <% end %> <br>
+<%= form_tag coffee_path(@coffee.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@coffee.name}" %>
+<% end %>
+
 <h4>Average Rating: <%= @coffee.avg_rating %> </h4><br>
 <% @coffee.reviews.each do |review| %>
 <p>User: <%= link_to review.user.name, user_path(review.user.id) %></p>
@@ -11,5 +15,4 @@
 <p>Comment: <%= review.comment %><p>
 
 <% end %>
-
 <%= link_to "Review Coffees", new_review_path(@review)%>
