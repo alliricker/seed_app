@@ -38,7 +38,8 @@ class CoffeesController < ApplicationController
         @coffee = Coffee.find(params[:id])
         @coffee.reviews.clear
         @coffee.destroy
-        redirect_to '/coffees'
+        redirect_to '/coffees/new'
+        flash[:message] = "#{@coffee.name} Deleted!"
     end
 
         

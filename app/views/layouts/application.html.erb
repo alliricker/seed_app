@@ -98,14 +98,20 @@
           color: rgb(60,94,37);
           font-family: 'Sanchez', serif;
         }
+        .flash {
+          text-align: center; 
+          color: rgb(255,255,255);
+          background-color: rgb(186,69,17);
+          border: 3px solid rgb(186,69,17);
+          width: 20%;
+        }
+
+
     </style>
   </head>
   <body>
 
-  <% flash.each do |key, message| %>
-  <p><%= message %></p>
-   <% end %>
-   
+
     <title>seed to cup</title>
 
     <header>
@@ -120,6 +126,12 @@
       <a href="/signout">Log Out</a>
     </div>
   </body>
+
+  <% flash.each do |key, message| %>
+  <div class= flash >
+  <p><%= message %></p>
+  </div>
+   <% end %>
 
 
   <%= yield %>
