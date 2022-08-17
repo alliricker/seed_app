@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
     before_action :require_login
+    skip_before_action :require_login, only: [:index, :show]
+    before_action :correct_user, only: [:edit, :update, :destroy]
 
     def new 
             @review = Review.new 
@@ -44,6 +46,13 @@ class ReviewsController < ApplicationController
 
     def require_login
       return head(:forbidden) unless session.include? :user_id
+    end
+
+    def correct_user 
+        @review = Review.find_by(id: params[:id])
+        unless current_user?(@review.user)
+            redirect_to reviews_path
+        end
     end
 
     def review_params

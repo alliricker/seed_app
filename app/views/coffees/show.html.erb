@@ -4,8 +4,10 @@
 <% @coffee.categories.each do |category| %>
 <p> Roast Level: <%= category.name %> </p>
 <% end %> <br>
+<% if current_user && current_user.id  == @coffee.user_id %>
 <%= form_tag coffee_path(@coffee.id), method: "delete" do %>
   <%= submit_tag "Delete #{@coffee.name}" %>
+  <% end %>
 <% end %>
 
 <h4>Average Rating: <%= @coffee.avg_rating %> </h4><br>
